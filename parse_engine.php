@@ -337,7 +337,7 @@ class parse_engine {
 			if ($this->debug) echo "Possibilities before error fixing: {" . implode(', ', $expected) . "}\n";
 
 			if ($this->enter_error_tolerant_state() || $this->has_step_for('error')) {
-				$this->eat('error', end($this->errors));
+				$this->eat('error', end($this->parser->errors));
 				if ($this->has_step_for($type)) {
 					$this->eat($type, $semantic);
 				}
